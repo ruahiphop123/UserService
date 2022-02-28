@@ -49,7 +49,6 @@ public class AddUserFrame extends javax.swing.JFrame {
         lbChucVu = new javax.swing.JLabel();
         lbSoThich = new javax.swing.JLabel();
         txtTaiKhoan = new javax.swing.JTextField();
-        txtMatKhau = new javax.swing.JTextField();
         txtSoDT = new javax.swing.JTextField();
         cbNgheNhac = new javax.swing.JCheckBox();
         cbXemPhim = new javax.swing.JCheckBox();
@@ -57,6 +56,7 @@ public class AddUserFrame extends javax.swing.JFrame {
         txtNoiDung = new javax.swing.JTextArea();
         rdbtAdmin = new javax.swing.JRadioButton();
         rdbtUser = new javax.swing.JRadioButton();
+        txtPassword = new javax.swing.JPasswordField();
         btBackToList = new javax.swing.JButton();
         btSubmitAdd = new javax.swing.JButton();
 
@@ -131,7 +131,6 @@ public class AddUserFrame extends javax.swing.JFrame {
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 302, Short.MAX_VALUE)
                             .addComponent(txtTen, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtTaiKhoan, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtMatKhau, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtSoDT, javax.swing.GroupLayout.Alignment.LEADING))
                         .addGap(9, 9, 9))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -143,8 +142,9 @@ public class AddUserFrame extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(rdbtAdmin)
                                 .addGap(18, 18, 18)
-                                .addComponent(rdbtUser)))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addComponent(rdbtUser))
+                            .addComponent(txtPassword))
+                        .addContainerGap())))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -159,8 +159,8 @@ public class AddUserFrame extends javax.swing.JFrame {
                     .addComponent(lbTaiKhoan))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtMatKhau, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbMatKhau))
+                    .addComponent(lbMatKhau)
+                    .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lbSoDT)
@@ -248,7 +248,7 @@ public class AddUserFrame extends javax.swing.JFrame {
     private void btSubmitAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSubmitAddActionPerformed
         user.setTenKH(txtTen.getText());
         user.setTaiKhoan(txtTaiKhoan.getText());
-        user.setMatKhau(txtMatKhau.getText());
+        user.setMatKhau(String.valueOf(txtPassword.getPassword()));
         user.setSoDT(txtSoDT.getText());
         user.setNoiDungCV(txtNoiDung.getText());
         String soThich = "";
@@ -335,8 +335,8 @@ public class AddUserFrame extends javax.swing.JFrame {
     private javax.swing.JLabel lbTen;
     private javax.swing.JRadioButton rdbtAdmin;
     private javax.swing.JRadioButton rdbtUser;
-    private javax.swing.JTextField txtMatKhau;
     private javax.swing.JTextArea txtNoiDung;
+    private javax.swing.JPasswordField txtPassword;
     private javax.swing.JTextField txtSoDT;
     private javax.swing.JTextField txtTaiKhoan;
     private javax.swing.JTextField txtTen;
